@@ -8,7 +8,10 @@ $(".btn").click(function(){
     playSound(userChosenColour);
     animatePress(userChosenColour);
 });
-
+$(".btn").keydown(function(){
+    nextSequence();
+    var level=0;
+});
 function  nextSequence(){
     var randomNumber = Math.floor((Math.random() * 3) + 1); 
     var randomChosenColour = buttonColours[randomNumber]; 
@@ -16,6 +19,7 @@ function  nextSequence(){
 
     $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
     playSound(randomChosenColour);
+ 
 }
 
 
