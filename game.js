@@ -6,6 +6,7 @@ $(".btn").click(function(){
     var userChosenColour = $(this).attr("id");
     userClickedPattern.push(userChosenColour);
     playSound(userChosenColour);
+    animatePress(userChosenColour);
 });
 
 function  nextSequence(){
@@ -23,6 +24,13 @@ function playSound(name){
     audio.play();
 }
 
+function animatePress(currentColor){
+$("#"+currentColor).addClass("pressed");
+
+setTimeout(function () {
+    $("#" + currentColor).removeClass("pressed");
+  }, 100);
+}
 
 // var numberOfButtons= document.querySelectorAll("div[type='button']").length;
 // for(var i=0;i<numberOfButtons;i++){
